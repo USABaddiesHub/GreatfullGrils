@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -272,12 +272,12 @@ nav a:hover {
 
 .video-native-ad {
     width: 100%;
-    min-height: 100px;
-    background: #fafbfc;
+    min-height: 90px;
+    background: #fff;
     border: 1px solid var(--border);
     border-radius: 7px;
-    padding: 12px;
-    margin: 25px 0 35px;
+    padding: 10px;
+    margin: 20px 0 30px;
     text-align: center;
     overflow: hidden;
 }
@@ -286,7 +286,21 @@ nav a:hover {
     color: #9299a5;
     font-size: 10px;
     letter-spacing: 2px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+}
+
+/* FIRST BANNER: UNDER THE INTRO */
+
+.native-top-banner {
+    margin: 20px 0 25px;
+    min-height: 90px;
+    width: 100%;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    padding: 10px;
+    text-align: center;
+    overflow: hidden;
 }
 
 /* NEWS GRID */
@@ -437,7 +451,7 @@ nav a:hover {
     background: #b81728;
 }
 
-/* HISTATS COUNTER */
+/* HISTATS */
 
 .histats-section {
     text-align: center;
@@ -551,7 +565,7 @@ footer p {
 
 <main class="container" id="home">
 
-    <!-- FEATURED NEWS -->
+    <!-- TRENDING IN AMERICA -->
 
     <section id="trending">
 
@@ -560,6 +574,23 @@ footer p {
         <p class="section-description">
             Discover interesting stories and viral moments from across the internet.
         </p>
+
+        <!-- NATIVE BANNER 1: POSITIONED HERE -->
+
+        <div class="video-native-ad native-top-banner">
+
+            <div class="ads-label">ADVERTISEMENT</div>
+
+            <script
+                data-cfasync="false"
+                async
+                type="text/javascript"
+                src="https://qw.rolledipocras.com/tiTtAiKEeLuZ/151239">
+            </script>
+
+        </div>
+
+        <!-- FEATURED STORY -->
 
         <div class="featured">
 
@@ -581,7 +612,9 @@ footer p {
 
                 <article class="story">
                     <span class="category">INTERNET CULTURE</span>
+
                     <h3>Why Everyday Moments Can Become Internet Sensations</h3>
+
                     <p>
                         Ordinary moments sometimes become popular when viewers
                         find them surprising, funny, or relatable.
@@ -590,7 +623,9 @@ footer p {
 
                 <article class="story">
                     <span class="category">VIRAL VIDEOS</span>
+
                     <h3>Unexpected Reactions Are Capturing Online Attention</h3>
+
                     <p>
                         Authentic reactions and surprising scenes continue
                         to inspire conversations on social media.
@@ -599,7 +634,9 @@ footer p {
 
                 <article class="story">
                     <span class="category">SOCIAL MEDIA</span>
+
                     <h3>The Short Videos Keeping Viewers Watching</h3>
+
                     <p>
                         Quick storytelling and memorable moments remain
                         popular features of online entertainment.
@@ -607,26 +644,10 @@ footer p {
                 </article>
 
             </div>
+
         </div>
 
     </section>
-
-    <!-- NATIVE BANNER 1 -->
-
-    <div class="video-native-ad">
-
-        <div class="ads-label">ADVERTISEMENT</div>
-
-        <div>
-            <script
-                data-cfasync="false"
-                async
-                type="text/javascript"
-                src="https://qw.rolledipocras.com/tiTtAiKEeLuZ/151239">
-            </script>
-        </div>
-
-    </div>
 
     <!-- LATEST STORIES -->
 
@@ -641,10 +662,12 @@ footer p {
         <div class="news-grid">
 
             <article class="news-card">
+
                 <div class="news-visual">📱</div>
 
                 <div class="news-body">
                     <span class="category">SOCIAL MEDIA</span>
+
                     <h3>How a Short Video Can Reach Millions of People</h3>
 
                     <p>
@@ -654,13 +677,16 @@ footer p {
 
                     <div class="article-meta">INTERNET CULTURE</div>
                 </div>
+
             </article>
 
             <article class="news-card">
+
                 <div class="news-visual">😲</div>
 
                 <div class="news-body">
                     <span class="category">UNEXPECTED MOMENTS</span>
+
                     <h3>The Surprising Moments That Make People Hit Share</h3>
 
                     <p>
@@ -670,13 +696,16 @@ footer p {
 
                     <div class="article-meta">TRENDING STORIES</div>
                 </div>
+
             </article>
 
             <article class="news-card">
+
                 <div class="news-visual">🌎</div>
 
                 <div class="news-body">
                     <span class="category">ONLINE TRENDS</span>
+
                     <h3>Why People Love Watching Real-Life Stories Online</h3>
 
                     <p>
@@ -686,6 +715,7 @@ footer p {
 
                     <div class="article-meta">VIRAL CULTURE</div>
                 </div>
+
             </article>
 
         </div>
@@ -699,17 +729,19 @@ footer p {
         <div class="ads-label">ADVERTISEMENT</div>
 
         <div id="native-ad-script-slot">
+
             <script
                 data-cfasync="false"
                 async
                 type="text/javascript"
                 src="https://ju.bionomysolera.com/tKxL7nY316cl3r5/155722">
             </script>
+
         </div>
 
     </div>
 
-    <!-- VIDEO THUMBNAIL -->
+    <!-- FEATURED VIDEO -->
 
     <section class="video-section" id="videos">
 
@@ -773,10 +805,9 @@ footer p {
         and are not verified reports of current trending events.
     </p>
 
-    <!-- HISTATS COUNTER -->
+    <!-- HISTATS COUNTER DISPLAY -->
 
     <div class="histats-section">
-
         <div id="histats_counter"></div>
 
         <noscript>
@@ -788,7 +819,6 @@ footer p {
                 >
             </a>
         </noscript>
-
     </div>
 
 </main>
@@ -857,6 +887,7 @@ let width = 0;
 let height = 0;
 
 function resizeCanvas() {
+
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
     width = window.innerWidth;
@@ -889,9 +920,11 @@ function resizeCanvas() {
 }
 
 function animateParticles() {
+
     ctx.clearRect(0, 0, width, height);
 
     particles.forEach((p, i) => {
+
         p.x += p.dx;
         p.y += p.dy;
 
@@ -905,6 +938,7 @@ function animateParticles() {
         ctx.fill();
 
         for (let j = i + 1; j < particles.length; j++) {
+
             const q = particles[j];
 
             const dx = p.x - q.x;
@@ -912,6 +946,7 @@ function animateParticles() {
             const distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < 95) {
+
                 ctx.beginPath();
                 ctx.moveTo(p.x, p.y);
                 ctx.lineTo(q.x, q.y);
