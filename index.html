@@ -16,7 +16,6 @@
     --text: #202633;
     --muted: #687386;
     --border: #e5e7eb;
-    --soft: #f5f7fa;
 }
 
 * {
@@ -145,7 +144,7 @@ nav a:hover {
     margin-right: 10px;
 }
 
-/* MAIN CONTAINER */
+/* MAIN */
 
 .container {
     max-width: 1050px;
@@ -174,11 +173,11 @@ nav a:hover {
     display: grid;
     grid-template-columns: 1.35fr 1fr;
     gap: 22px;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 .featured-main {
-    min-height: 340px;
+    min-height: 430px;
     border-radius: 8px;
     padding: 25px;
     display: flex;
@@ -186,7 +185,12 @@ nav a:hover {
     justify-content: flex-end;
     color: white;
     background:
-        linear-gradient(0deg, rgba(10,23,43,.94), rgba(10,23,43,.08)),
+        linear-gradient(
+            0deg,
+            rgba(10,23,43,.98) 0%,
+            rgba(10,23,43,.65) 45%,
+            rgba(10,23,43,.08) 100%
+        ),
         linear-gradient(135deg, #a8c5e5, #315985);
     position: relative;
     overflow: hidden;
@@ -200,7 +204,33 @@ nav a:hover {
     font-size: 75px;
     font-weight: 900;
     color: rgba(255,255,255,.15);
+    pointer-events: none;
 }
+
+/* FIRST NATIVE BANNER INSIDE BLUE BOX */
+
+.native-inside-feature {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-height: 90px;
+    margin-bottom: 22px;
+    padding: 10px;
+    text-align: center;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.22);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.native-inside-feature .ads-label {
+    color: rgba(255,255,255,.75);
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+/* FEATURED TEXT */
 
 .badge {
     display: inline-block;
@@ -213,6 +243,7 @@ nav a:hover {
     margin-bottom: 12px;
     align-self: flex-start;
     position: relative;
+    z-index: 1;
 }
 
 .featured-main h1 {
@@ -220,12 +251,14 @@ nav a:hover {
     line-height: 1.25;
     margin-bottom: 12px;
     position: relative;
+    z-index: 1;
 }
 
 .featured-main p {
     font-size: 13px;
     color: #eef3fa;
     position: relative;
+    z-index: 1;
 }
 
 .featured-list {
@@ -268,7 +301,7 @@ nav a:hover {
     color: var(--muted);
 }
 
-/* NATIVE BANNERS */
+/* SECOND NATIVE BANNER */
 
 .video-native-ad {
     width: 100%;
@@ -277,7 +310,7 @@ nav a:hover {
     border: 1px solid var(--border);
     border-radius: 7px;
     padding: 10px;
-    margin: 20px 0 30px;
+    margin: 25px 0 35px;
     text-align: center;
     overflow: hidden;
 }
@@ -287,20 +320,6 @@ nav a:hover {
     font-size: 10px;
     letter-spacing: 2px;
     margin-bottom: 8px;
-}
-
-/* FIRST BANNER: UNDER THE INTRO */
-
-.native-top-banner {
-    margin: 20px 0 25px;
-    min-height: 90px;
-    width: 100%;
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: 7px;
-    padding: 10px;
-    text-align: center;
-    overflow: hidden;
 }
 
 /* NEWS GRID */
@@ -396,7 +415,6 @@ nav a:hover {
     position: absolute;
     inset: 0;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     background: rgba(0,0,0,.25);
@@ -484,7 +502,7 @@ footer p {
     margin-top: 6px;
 }
 
-/* MOBILE */
+/* RESPONSIVE */
 
 @media (max-width: 720px) {
     .header-inner {
@@ -503,7 +521,16 @@ footer p {
     }
 
     .featured-main {
-        min-height: 300px;
+        min-height: 430px;
+        padding: 20px;
+    }
+
+    .featured-main::before {
+        font-size: 60px;
+    }
+
+    .native-inside-feature {
+        margin-bottom: 20px;
     }
 
     .news-grid {
@@ -558,6 +585,8 @@ footer p {
     </div>
 </header>
 
+<!-- TRENDING TICKER -->
+
 <div class="ticker">
     <strong>TRENDING NOW</strong>
     Viral moments, internet sensations, and stories everyone is talking about.
@@ -575,26 +604,28 @@ footer p {
             Discover interesting stories and viral moments from across the internet.
         </p>
 
-        <!-- NATIVE BANNER 1: POSITIONED HERE -->
-
-        <div class="video-native-ad native-top-banner">
-
-            <div class="ads-label">ADVERTISEMENT</div>
-
-            <script
-                data-cfasync="false"
-                async
-                type="text/javascript"
-                src="https://qw.rolledipocras.com/tiTtAiKEeLuZ/151239">
-            </script>
-
-        </div>
-
-        <!-- FEATURED STORY -->
+        <!-- FEATURED BOX WITH FIRST NATIVE BANNER INSIDE -->
 
         <div class="featured">
 
             <article class="featured-main">
+
+                <!-- NATIVE BANNER 1 -->
+
+                <div class="native-inside-feature">
+
+                    <div class="ads-label">ADVERTISEMENT</div>
+
+                    <script
+                        data-cfasync="false"
+                        async
+                        type="text/javascript"
+                        src="https://qw.rolledipocras.com/tiTtAiKEeLuZ/151239">
+                    </script>
+
+                </div>
+
+                <!-- FEATURED HEADLINE -->
 
                 <span class="badge">VIRAL SPOTLIGHT</span>
 
@@ -607,6 +638,8 @@ footer p {
                 </p>
 
             </article>
+
+            <!-- SIDE STORIES -->
 
             <div class="featured-list">
 
@@ -758,7 +791,7 @@ footer p {
                 <img
                     class="video-thumbnail"
                     src="https://cdn.aceimg.com/qooVXJBN9.jpg"
-                    alt="Featured viral video thumbnail"
+                    alt="Featured video thumbnail"
                     loading="lazy"
                 >
 
@@ -769,7 +802,7 @@ footer p {
                         href="https://x-hubb.github.io/Badiesgirlhub/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Watch the full video"
+                        aria-label="Watch the video"
                     >▶</a>
 
                 </div>
@@ -778,13 +811,12 @@ footer p {
 
             <div class="video-copy">
 
-                <span class="category">FEATURED VIRAL VIDEO</span>
+                <span class="category">FEATURED VIDEO</span>
 
-                <h2>The Video Everyone Wants to See</h2>
+                <h2>Watch the Featured Video</h2>
 
                 <p>
-                    Curious about the full story? Click the play button
-                    to continue and discover the video for yourself.
+                    Click the play button to continue to the video page.
                 </p>
 
                 <a
@@ -805,7 +837,7 @@ footer p {
         and are not verified reports of current trending events.
     </p>
 
-    <!-- HISTATS COUNTER DISPLAY -->
+    <!-- HISTATS COUNTER -->
 
     <div class="histats-section">
         <div id="histats_counter"></div>
@@ -839,7 +871,7 @@ footer p {
 
 </footer>
 
-<!-- HISTATS TRACKING SCRIPT -->
+<!-- HISTATS TRACKING -->
 
 <script type="text/javascript">
 var _Hasync = _Hasync || [];
@@ -887,7 +919,6 @@ let width = 0;
 let height = 0;
 
 function resizeCanvas() {
-
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
     width = window.innerWidth;
@@ -920,11 +951,9 @@ function resizeCanvas() {
 }
 
 function animateParticles() {
-
     ctx.clearRect(0, 0, width, height);
 
     particles.forEach((p, i) => {
-
         p.x += p.dx;
         p.y += p.dy;
 
@@ -938,7 +967,6 @@ function animateParticles() {
         ctx.fill();
 
         for (let j = i + 1; j < particles.length; j++) {
-
             const q = particles[j];
 
             const dx = p.x - q.x;
@@ -946,7 +974,6 @@ function animateParticles() {
             const distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < 95) {
-
                 ctx.beginPath();
                 ctx.moveTo(p.x, p.y);
                 ctx.lineTo(q.x, q.y);
@@ -971,4 +998,4 @@ animateParticles();
 
 </body>
 </html>
-```
+
